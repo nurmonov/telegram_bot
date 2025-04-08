@@ -35,12 +35,6 @@ public class SecurityConfig {
                         req
                                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers("/login", "/file/**").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/product", "/api/categories").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/order/**","/orderItem").hasAnyRole("ADMIN","USER")
-                                .requestMatchers(HttpMethod.POST, "/order/**").hasAnyRole("ADMIN","USER")
-                                .requestMatchers(HttpMethod.POST, "/product/**", "/product" , "/category","/category/**").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.DELETE, "/product/**", "/product" , "/category","/category/**").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.PUT, "/product/**", "/product" , "/category","/category/**").hasRole("ADMIN")
                                 .anyRequest()
                                 .authenticated())
                 .userDetailsService(customUserDetailsService)
