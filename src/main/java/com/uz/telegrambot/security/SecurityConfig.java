@@ -35,6 +35,7 @@ public class SecurityConfig {
                         req
                                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers("/login", "/file/**").permitAll()
+                                .requestMatchers("/v3/api-docs/**","/swagger-ui/**","/swagger-ui.html", "/v3/api-docs").permitAll()
                                 .anyRequest()
                                 .authenticated())
                 .userDetailsService(customUserDetailsService)
