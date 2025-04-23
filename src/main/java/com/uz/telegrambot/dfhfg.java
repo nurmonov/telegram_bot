@@ -21,4 +21,10 @@ public class dfhfg {
         message.setText("Test xabari: Salom, Telegram bot!");
 
     }
+
+    private void sendMessage(String chatId, String text) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText(text);
+    }
 }
